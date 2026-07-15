@@ -1,0 +1,51 @@
+# SCM/CI workflow definitions for OBS.
+#
+# Reference: https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration
+#
+
+---
+build_main:
+  # Packages in isv:Rancher:dependencies are _scmsync'd to this repo on #main; a
+  # push to main triggers OBS to refresh sources and rebuild automatically. This
+  # workflow entry exists so OBS reports build status back to the commit as a
+  # GitHub check.
+  steps:
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: docker-machine-driver-harvester-v1
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: golangci-lint-v2
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: helm-v3
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: helm-v4
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: k9s
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: kubectl-v1.36
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: kubectl-v1.35
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: kubectl-v1.34
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: kubectl-v1.33
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: kustomize
+    - trigger_services:
+        project: isv:Rancher:dependencies
+        package: yq
+
+  filters:
+    event: push
+    branches:
+      only:
+        - main

@@ -1,0 +1,18 @@
+<services>
+  <service name="obs_scm">
+    <param name="scm">git</param>
+    <param name="url">https://github.com/kubernetes/kubernetes.git</param>
+    <param name="revision">fc0e7a6ca50f7ce368f9a5516e1716b473ed3a26</param>
+    <param name="version">1.35.6</param>
+    <param name="versionformat">@PARENT_TAG@</param>
+    <param name="versionrewrite-pattern">v(.*)</param>
+    <param name="versionrewrite-replacement">\1</param>
+    <param name="filename">kubectl</param>
+  </service>
+  <service name="set_version" mode="buildtime"/>
+  <service name="tar" mode="buildtime"/>
+  <service name="recompress" mode="buildtime">
+    <param name="file">*.tar</param>
+    <param name="compression">zst</param>
+  </service>
+</services>

@@ -1,0 +1,21 @@
+<services>
+  <service name="obs_scm">
+    <param name="scm">git</param>
+    <param name="url">https://github.com/helm/helm.git</param>
+    <param name="revision">1ad6e68924fdf6fb0c7dcef8e9e1dfc0f36eaed6</param>
+    <param name="version">3.21.3</param>
+    <param name="versionformat">@PARENT_TAG@</param>
+    <param name="versionrewrite-pattern">v(.*)</param>
+    <param name="versionrewrite-replacement">\1</param>
+    <param name="filename">helm</param>
+  </service>
+  <service name="go_modules">
+    <param name="compression">zst</param>
+  </service>
+  <service name="set_version" mode="buildtime"/>
+  <service name="tar" mode="buildtime"/>
+  <service name="recompress" mode="buildtime">
+    <param name="file">*.tar</param>
+    <param name="compression">zst</param>
+  </service>
+</services>

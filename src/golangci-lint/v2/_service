@@ -1,0 +1,21 @@
+<services>
+  <service name="obs_scm">
+    <param name="scm">git</param>
+    <param name="url">https://github.com/golangci/golangci-lint.git</param>
+    <param name="revision">c0d3ddc9cf3faa61a4e378e879ece580256d76e5</param>
+    <param name="version">2.12.2</param>
+    <param name="versionformat">@PARENT_TAG@</param>
+    <param name="versionrewrite-pattern">v(.*)</param>
+    <param name="versionrewrite-replacement">\1</param>
+    <param name="filename">golangci-lint</param>
+  </service>
+  <service name="go_modules">
+    <param name="compression">zst</param>
+  </service>
+  <service name="set_version" mode="buildtime"/>
+  <service name="tar" mode="buildtime"/>
+  <service name="recompress" mode="buildtime">
+    <param name="file">*.tar</param>
+    <param name="compression">zst</param>
+  </service>
+</services>

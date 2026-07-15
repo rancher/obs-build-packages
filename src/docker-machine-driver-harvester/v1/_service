@@ -1,0 +1,23 @@
+<services>
+  <service name="obs_scm">
+    <param name="scm">git</param>
+    <param name="url">https://github.com/harvester/docker-machine-driver-harvester.git</param>
+    <param name="revision">5be30f6be8eb464263b1e053df6e396a7bf21858</param>
+    <param name="version">1.0.6</param>
+    <param name="versionformat">@PARENT_TAG@</param>
+    <param name="versionrewrite-pattern">v(.*)</param>
+    <param name="versionrewrite-replacement">\1</param>
+    <param name="filename">docker-machine-driver-harvester</param>
+  </service>
+  <service name="go_modules">
+    <param name="compression">zst</param>
+    <param name="replace">golang.org/x/net=golang.org/x/net@v0.55.0</param>
+    <param name="replace">golang.org/x/crypto=golang.org/x/crypto@v0.52.0</param>
+  </service>
+  <service name="set_version" mode="buildtime"/>
+  <service name="tar" mode="buildtime"/>
+  <service name="recompress" mode="buildtime">
+    <param name="file">*.tar</param>
+    <param name="compression">zst</param>
+  </service>
+</services>
