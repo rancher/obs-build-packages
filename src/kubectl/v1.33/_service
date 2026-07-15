@@ -7,7 +7,7 @@
     <param name="versionformat">@PARENT_TAG@</param>
     <param name="versionrewrite-pattern">v(.*)</param>
     <param name="versionrewrite-replacement">\1</param>
-    <param name="filename">kubectl</param>
+    <param name="filename">kubectl1.33</param>
   </service>
   <service name="set_version" mode="buildtime"/>
   <service name="tar" mode="buildtime"/>

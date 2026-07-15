@@ -2,7 +2,7 @@
 # spec file for package kubectl v1.33
 #
 
-Name:           kubectl
+Name:           kubectl1.33
 Version:        1.33.13
 Release:        0
 Summary:        Kubernetes command-line tool

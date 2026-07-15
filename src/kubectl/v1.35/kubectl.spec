@@ -2,7 +2,7 @@
 # spec file for package kubectl v1.35
 #
 
-Name:           kubectl
+Name:           kubectl1.35
 Version:        1.35.6
 Release:        0
 Summary:        Kubernetes command-line tool

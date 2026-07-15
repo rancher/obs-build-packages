@@ -2,7 +2,7 @@
 # spec file for package helm (v3)
 #
 
-Name:           helm
+Name:           helm3
 Version:        3.21.3
 Release:        0
 Summary:        The Kubernetes Package Manager 
@@ -39,12 +39,12 @@ go build \
         -X helm.sh/helm/v3/pkg/lint/rules.k8sVersionMinor=${K8S_MODULES_MINOR_VER} \
         -X helm.sh/helm/v3/pkg/chartutil.k8sVersionMajor=${K8S_MODULES_MAJOR_VER} \
         -X helm.sh/helm/v3/pkg/chartutil.k8sVersionMinor=${K8S_MODULES_MINOR_VER}" \
-    -o %{name} ./cmd/helm
+    -o %{name} ./cmd/%{name}
 
 %install
-install -D -m 0755 %{name} %{buildroot}%{_bindir}/%{name}3
+install -D -m 0755 %{name} %{buildroot}%{_bindir}/%{name}
 
 %files
 %license LICENSE
 %doc README.md
-%{_bindir}/%{name}3
+%{_bindir}/%{name}

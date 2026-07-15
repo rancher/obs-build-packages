@@ -2,7 +2,7 @@
 # spec file for package kubectl v1.34
 #
 
-Name:           kubectl
+Name:           kubectl1.34
 Version:        1.34.9
 Release:        0
 Summary:        Kubernetes command-line tool
