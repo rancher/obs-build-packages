@@ -46,7 +46,7 @@ go build \
         -X k8s.io/component-base/version.gitMajor=${K8S_MAJOR_VERSION} \
         -X k8s.io/client-go/pkg/version.gitMinor=${K8S_MINOR_VERSION} \
         -X k8s.io/component-base/version.gitMinor=${K8S_MINOR_VERSION}" \
-    -o %{name} ./cmd/%{name}
+    -o %{name} ./cmd/kubectl
 
 %install
 install -D -m 0755 %{name} %{buildroot}%{_bindir}/%{name}

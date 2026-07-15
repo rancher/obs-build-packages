@@ -39,7 +39,7 @@ go build \
         -X helm.sh/helm/v3/pkg/lint/rules.k8sVersionMinor=${K8S_MODULES_MINOR_VER} \
         -X helm.sh/helm/v3/pkg/chartutil.k8sVersionMajor=${K8S_MODULES_MAJOR_VER} \
         -X helm.sh/helm/v3/pkg/chartutil.k8sVersionMinor=${K8S_MODULES_MINOR_VER}" \
-    -o %{name} ./cmd/%{name}
+    -o %{name} ./cmd/helm
 
 %install
 install -D -m 0755 %{name} %{buildroot}%{_bindir}/%{name}
