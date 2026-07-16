@@ -11,6 +11,12 @@
   </service>
   <service name="go_modules">
     <param name="compression">zst</param>
+    <param name="replace">github.com/aws/aws-sdk-go-v2/service/s3=github.com/aws/aws-sdk-go-v2/service/s3@v1.97.3</param>
+    <param name="replace">golang.org/x/crypto=golang.org/x/crypto@v0.52.0</param>
+    <param name="replace">golang.org/x/net=golang.org/x/net@v0.56.0</param>
+    <param name="replace">golang.org/x/sys=golang.org/x/sys@v0.44.0</param>
+    <param name="replace">golang.org/x/text=golang.org/x/text@v0.39.0</param>
+    <param name="replace">oras.land/oras-go/v2=oras.land/oras-go/v2@v2.6.1</param>
   </service>
   <service name="set_version" mode="buildtime"/>
   <service name="tar" mode="buildtime"/>

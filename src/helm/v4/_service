@@ -11,6 +11,7 @@
   </service>
   <service name="go_modules">
     <param name="compression">zst</param>
+    <param name="replace">oras.land/oras-go/v2=oras.land/oras-go/v2@v2.6.1</param>
   </service>
   <service name="set_version" mode="buildtime"/>
   <service name="tar" mode="buildtime"/>
